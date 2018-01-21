@@ -11,6 +11,7 @@ namespace App\Http\Controllers\Admin;
 
 class PostsController extends StaticsController
 {
+    const PATH_VIEW = 'admin.entities.static.posts.';
 
     public function index()
     {
@@ -29,7 +30,7 @@ class PostsController extends StaticsController
             $posts = $this->getALlPost();
             $categories = $this->getAllCategorie();
 
-            return view(self::PATH_VIEW . 'dashboard')->with([
+            return view(self::PATH_VIEW . 'index')->with([
                 'title' => 'Posts',
                 'users' => $users,
                 'posts' => $posts,
