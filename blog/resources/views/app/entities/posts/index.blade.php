@@ -3,7 +3,7 @@
 @section('content')
     
     <!-- Page Content -->
-    <div class="container mt-5">
+    <div class="container">
         
         <div class="row">
             <h1 class="my-4 ml-3">Lasted Posts
