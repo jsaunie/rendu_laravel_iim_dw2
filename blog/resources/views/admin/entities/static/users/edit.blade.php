@@ -26,6 +26,8 @@
                     <div class="row no-gutters box">
                         <div class="col-sm-12 col-md-6 p-3">
                             <form class="m-2 my-lg-0">
+                                {{ csrf_field() }}
+
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control b-a no-bg no-shadow mb-2"
                                        placeholder="Name" id="name" name="name">
@@ -41,8 +43,8 @@
                                            placeholder="Confirm Password">
                                 </span>
                                 <label for="role">Role</label>
-                                <select type="password" class="form-control b-a no-bg no-shadow mb-2"
-                                       placeholder="Confirm Password">
+                                <select class="form-control b-a no-bg no-shadow mb-2"
+                                        placeholder="Confirm Password">
                                     <option value="1">User</option>
                                     <option value="2">Admin</option>
                                 </select>
@@ -55,9 +57,8 @@
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="padding">
-                                <h6>{{ Auth::user()->name }}, ajouter un nouvel utilisateur</h6>
-                                <p class="text-muted my-3">Vous pouvez ajouter, editer ou supprimer les
-                                    utilisateurs.</p>
+                                <h6>{{ Auth::user()->name }}, edit le profil de cet utilisateur</h6>
+                                <p class="text-muted my-3">Vous pouvez editer le profil de l'utilisateur</p>
                                 <p><span class="text-success">{{ $countUsers }}</span> utilisateurs au total !</p>
                                 <a href="#" class="btn btn-sm btn-rounded success theme">Add new user</a>
                                 <a href="{{ action('Admin\StaticsController@dashboard') }}"

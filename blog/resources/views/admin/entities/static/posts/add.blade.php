@@ -26,26 +26,15 @@
                     <div class="row no-gutters box">
                         <div class="col-sm-12 col-md-6 p-3">
                             <form class="m-2 my-lg-0">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control b-a no-bg no-shadow mb-2"
-                                       placeholder="Name" id="name" name="name">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control b-a no-bg no-shadow mb-2"
-                                       placeholder="Email" id="email" name="email">
+                                {{ csrf_field() }}
 
-                                <label for="password">Password</label>
-                                <span class="input-group-btn mb-2">
-                                    <input type="password" class="form-control b-a no-bg no-shadow mr-2"
-                                           placeholder="Password" id="password" name="password">
-                                    <input type="password" class="form-control b-a no-bg no-shadow ml-2"
-                                           placeholder="Confirm Password">
-                                </span>
-                                <label for="role">Role</label>
-                                <select type="password" class="form-control b-a no-bg no-shadow mb-2"
-                                       placeholder="Confirm Password">
-                                    <option value="1">User</option>
-                                    <option value="2">Admin</option>
-                                </select>
+                                <label for="title">title</label>
+                                <input type="text" class="form-control b-a no-bg no-shadow mb-2"
+                                       placeholder="Name" id="title" name="title">
+                                <label for="content">Content</label>
+                                <textarea class="form-control b-a no-bg no-shadow mb-2"
+                                          placeholder="Le contenue du post" id="content" name="content"
+                                          rows="5"></textarea>
 
                                 <span class="input-group-btn pl-auto mt-3">
                                     <button type="button" class="btn  btn-success b-a no-shadow ml-auto">Add</button>

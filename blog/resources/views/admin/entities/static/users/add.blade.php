@@ -58,8 +58,7 @@
                         <div class="col-sm-12 col-md-6">
                             <div class="padding">
                                 <h6>{{ Auth::user()->name }}, ajouter un nouvel utilisateur</h6>
-                                <p class="text-muted my-3">Vous pouvez ajouter, editer ou supprimer les
-                                    utilisateurs.</p>
+                                <p class="text-muted my-3">Vous pouvez ajouter un nouvel utilisateur.</p>
                                 <p><span class="text-success">{{ $countUsers }}</span> utilisateurs au total !</p>
                                 <a href="#" class="btn btn-sm btn-rounded success theme">Add new user</a>
                                 <a href="{{ action('Admin\StaticsController@dashboard') }}"

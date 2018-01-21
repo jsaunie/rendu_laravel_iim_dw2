@@ -26,25 +26,17 @@
                     <div class="row no-gutters box">
                         <div class="col-sm-12 col-md-6 p-3">
                             <form class="m-2 my-lg-0">
-                                <label for="name">Name</label>
+                                {{ csrf_field() }}
+
+                                <label for="name">Title</label>
                                 <input type="text" class="form-control b-a no-bg no-shadow mb-2"
                                        placeholder="Name" id="name" name="name">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control b-a no-bg no-shadow mb-2"
-                                       placeholder="Email" id="email" name="email">
 
-                                <label for="password">Password</label>
-                                <span class="input-group-btn mb-2">
-                                    <input type="password" class="form-control b-a no-bg no-shadow mr-2"
-                                           placeholder="Password" id="password" name="password">
-                                    <input type="password" class="form-control b-a no-bg no-shadow ml-2"
-                                           placeholder="Confirm Password">
-                                </span>
-                                <label for="role">Role</label>
-                                <select type="password" class="form-control b-a no-bg no-shadow mb-2"
-                                       placeholder="Confirm Password">
-                                    <option value="1">User</option>
-                                    <option value="2">Admin</option>
+                                <label for="visible">Visible</label>
+                                <select class="form-control b-a no-bg no-shadow mb-2"
+                                        placeholder="La catégorie est visible ?">
+                                    <option value="0">Non visible</option>
+                                    <option value="1">Visible</option>
                                 </select>
 
                                 <span class="input-group-btn pl-auto mt-3">
@@ -55,11 +47,10 @@
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="padding">
-                                <h6>{{ Auth::user()->name }}, ajouter un nouvel utilisateur</h6>
-                                <p class="text-muted my-3">Vous pouvez ajouter, editer ou supprimer les
-                                    utilisateurs.</p>
-                                <p><span class="text-success">{{ $countUsers }}</span> utilisateurs au total !</p>
-                                <a href="#" class="btn btn-sm btn-rounded success theme">Add new user</a>
+                                <h6>{{ Auth::user()->name }}, ajouter une nouvelle categorie</h6>
+                                <p class="text-muted my-3">Vous pouvez ajouter une nouvelle categorie et définir si elle est visible ou non</p>
+                                <p><span class="text-success">{{ $countCategories }}</span> catégories au total !</p>
+                                <a href="#" class="btn btn-sm btn-rounded success theme">Add new category</a>
                                 <a href="{{ action('Admin\StaticsController@dashboard') }}"
                                    class="btn btn-sm btn-rounded white">Go to Dashboard</a>
 
