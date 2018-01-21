@@ -26,7 +26,7 @@ Route::group(['prefix' => 'blog'], function() {
     //comment
     Route::group(['prefix' => 'comment'], function (){
         Route::get('/{id}', ['uses' => 'App\CommentController@edit']);
-        Route::post('/{id}', ['uses' => 'App\CommentController@postUpdateComment']);
+        Route::post('/update/{id}', ['uses' => 'App\CommentController@postUpdateComment']);
         Route::post('/create', ['uses' => 'App\CommentController@store']);
         Route::post('/delete', ['uses' => 'App\CommentController@delete']);
     });
