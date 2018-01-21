@@ -30,14 +30,14 @@
                                     <i class="fa fa-folder-open"></i>
                                 </span>
                                 <span class="nav-text">Categories</span></a></li>
-                        <li><a href="app.message.html">
+                        <li><a href="#">
                                 <span class="nav-badge">
                                     <b class="badge badge-sm badge-pill success">{{ $countPostsConfirm }}</b> </span>
                                 <span class="nav-icon">
                                     <i class="fa fa-comment"></i>
                                 </span>
                                 <span class="nav-text">Posts</span></a></li>
-                        <li><a href="app.user.html">
+                        <li><a href="#">
                                  <span class="nav-badge">
                                     <b class="badge badge-sm badge-pill success">{{ $countUsersConfirm }}</b> </span>
                                 <span class="nav-icon">
