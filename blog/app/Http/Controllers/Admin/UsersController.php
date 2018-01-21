@@ -53,12 +53,12 @@ class UsersController extends StaticsController
 
     }
 
-    public function edit()
+    public function edit($id)
     {
 
     }
 
-    public function delete()
+    public function delete($id)
     {
 
     }

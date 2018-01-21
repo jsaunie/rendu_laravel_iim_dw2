@@ -29,13 +29,9 @@
                             @endif
                         </div>
                         <div class="card-footer text-muted">
-                            Posted on ,
+                            Posted on {{ $post->created_at }}, by <a href="#">{{$post->getAuthor->name}}</a>
                             <br>
-                            by <a href="#">{{$post->getAuthor->name}}</a>
-                            <br>
-                            Categories : <a href="">{{ $post->getCategory->title }}</a>
-                            <br>
-                            Votes : <span class="rounded badge badge-success p-2">{{ $post->vote }}</span>
+                            Categories : <a href="">{{ $post->getCategory->title }}</a> | Votes : <span class="rounded badge badge-success p-2">{{ $post->vote }}</span>
                         </div>
                     </div>
                 @endforeach

@@ -47,9 +47,25 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', ['uses' => 'Admin\StaticsController@dashboard']);
     Route::get('/post/confirm/{slug}', ['uses' => 'Admin\StaticsController@confirmPost']);
     // Admin : Posts
-    Route::get('/posts', ['uses' => 'Admin\PostsController@index']);
+    Route::group(['prefix' => 'posts'], function () {
+        Route::get('/', ['uses' => 'Admin\PostsController@index']);
+        Route::get('/add', ['uses' => 'Admin\PostsController@add']);
+        Route::get('/edit/{id}', ['uses' => 'Admin\PostsController@edit']);
+        Route::get('/delete/{id}', ['uses' => 'Admin\PostsController@delete']);
+    });
     // Admin : Users
-    Route::get('/users', ['uses' => 'Admin\UsersController@index']);
+    Route::group(['prefix' => 'users'], function () {
+        Route::get('/', ['uses' => 'Admin\UsersController@index']);
+        Route::get('/add', ['uses' => 'Admin\UsersController@add']);
+        Route::get('/edit/{id}', ['uses' => 'Admin\UsersController@edit']);
+        Route::get('/delete/{id}', ['uses' => 'Admin\UsersController@delete']);
+    });
     // Admin : categories
-    Route::get('/categories', ['uses' => 'Admin\CategoriesController@index']);
+    Route::group(['prefix' => 'categories'], function () {
+        Route::get('/', ['uses' => 'Admin\CategoriesController@index']);
+        Route::get('/add', ['uses' => 'Admin\CategoriesController@add']);
+        Route::get('/edit/{id}', ['uses' => 'Admin\CategoriesController@edit']);
+        Route::get('/delete/{id}', ['uses' => 'Admin\CategoriesController@delete']);
+    });
 });
+

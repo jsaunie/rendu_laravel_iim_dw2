@@ -50,17 +50,17 @@ class PostsController extends StaticsController
 
     public function add()
     {
-        
+
     }
 
-    public function edit()
+    public function edit($id)
     {
-        
+
     }
 
-    public function delete()
+    public function delete($id)
     {
-        
+
     }
-    
+
 }
