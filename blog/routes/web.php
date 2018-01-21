@@ -24,8 +24,11 @@ Route::group(['prefix' => 'blog', 'middleware' => 'auth'], function () {
     Route::get('/show/{slug}', ['uses' => 'App\BlogController@show']);
     Route::get('/{slug}/vote', ['uses' => 'App\BlogController@vote']);
     Route::get('/create', ['uses' => 'App\BlogController@create']);
+    Route::get('/update/{slug}', ['uses' => 'App\BlogController@showUpdateForm']);
+    Route::post('/update/{slug}', ['uses' => 'App\BlogController@postUpdate']);
     Route::post('/create', ['uses' => 'App\BlogController@post']);
     Route::post('/delete', ['uses' => 'App\BlogController@delete']);
+    
     //comment
     Route::group(['prefix' => 'comment'], function () {
         Route::get('/{id}', ['uses' => 'App\CommentController@edit']);

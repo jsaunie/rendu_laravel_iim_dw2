@@ -29,6 +29,7 @@
                                         <input type="hidden" value="{{ $post->id }}" name="postId">
                                         <button type="submit" class="btn btn-danger mt-1">Supprimer</button>
                                     </form>
+                                    <a href="{{ action('App\BlogController@showUpdateForm', $slug = $post->slug) }}" class="btn btn-light mt-1">Update</a>
                                 @endif
                             @endif
                         </div>

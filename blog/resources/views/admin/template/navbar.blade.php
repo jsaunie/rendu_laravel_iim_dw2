@@ -9,7 +9,7 @@
                 </svg>
                 <span class="hidden-folded d-inline">Co-Blog</span>
                 <div class="nav-item my-3 d-flex justify-content-center">
-                    <a href="#" class="btn btn-light">
+                    <a href="{{ action('App\BlogController@index') }}" class="btn btn-light">
                         Retourner au Site
                     </a>
                 </div>
