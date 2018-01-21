@@ -44,5 +44,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     // Admin : Users
     Route::get('/users', ['uses' => 'Admin\UsersController@index']);
     // Admin : Categories
-    Route::get('/categories', ['uses' => 'Admin\categoriesController@index']);
+    Route::get('/categories', ['uses' => 'Admin\CategoriesController@index']);
 });
