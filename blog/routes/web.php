@@ -45,6 +45,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/posts', ['uses' => 'Admin\PostsController@index']);
     // Admin : Users
     Route::get('/users', ['uses' => 'Admin\UsersController@index']);
-    // Admin : Categories
+    // Admin : categories
     Route::get('/categories', ['uses' => 'Admin\CategoriesController@index']);
 });
