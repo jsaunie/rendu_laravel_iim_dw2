@@ -23,4 +23,5 @@ class Post extends Model
     public function getComment(){
         return $this->hasMany(Comment::class,'fk_post_id', 'id');
     }
+    
 }

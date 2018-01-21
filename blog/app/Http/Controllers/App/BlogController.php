@@ -18,13 +18,15 @@ class BlogController extends Controller
     
     public function index()
     {
+        $postOfUser = $this->getPostNotConfirm();
         $posts = $this->getAllPostConfirm();
         $categories = $this->getAllCategorieConfirm();
         
         return view(self::POST_VIEW . 'index')->with([
             'title'      => 'Home',
             'posts'      => $posts,
-            'categories' => $categories
+            'categories' => $categories,
+            'postOfUser' => $postOfUser
         ]);
     }
     
