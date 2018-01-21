@@ -41,7 +41,12 @@
                             @if(Auth::user()->id === $comment->fk_user_id)
                                 <div class="card-footer">
                                     <a href="" class="btn btn-primary">Modifier mon commentaire !</a>
-                                    <span id="deleteCom{{$comment->id}}" data-id="{{ $comment->id }}" class="deleteCom btn btn-danger">delete</span>
+                                    <form action="{{ action('App\CommentController@delete') }}" method="POST" class="d-flex mt-1">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" value="{{ $comment->id }}" name="commentId">
+                                        <input type="hidden" value="{{ $post->id }}" name="postId">
+                                        <button type="submit" id="deleteCom{{$comment->id}}" data-id="{{ $comment->id }}" class="deleteCom btn btn-danger">delete</button>
+                                    </form>
                                 </div>
                             @endif
                         @endif

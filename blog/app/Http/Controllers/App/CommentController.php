@@ -22,7 +22,18 @@ class CommentController extends Controller
         
         $post = Post::where('id', $request->postId)->first();
         
-        return redirect()->action('App\BlogController@show', $id = $post->slug);
+        return redirect()->action('App\BlogController@show', $slug = $post->slug);
         dd($request);
+    }
+    
+    public function delete(Request $request)
+    {
+        $comment = Comment::where('id', $request->commentId)->first();
+        
+        $comment->delete();
+        
+        $post = Post::where('id', $request->postId)->first();
+        
+        return redirect()->action('App\BlogController@show', $slug = $post->slug);
     }
 }

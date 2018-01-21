@@ -26,6 +26,7 @@ Route::group(['prefix' => 'blog'], function() {
     //comment
     Route::group(['prefix' => 'comment'], function (){
         Route::post('/create', ['uses' => 'App\CommentController@store']);
+        Route::post('/delete', ['uses' => 'App\CommentController@delete']);
     });
 });
 
