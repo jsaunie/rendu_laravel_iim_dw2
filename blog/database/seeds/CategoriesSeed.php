@@ -18,7 +18,7 @@ class CategoriesSeed extends Seeder
         for ($i=0;$i<30;$i++){
             $categorieName = $faker->name();
             $data[] =[
-                'categorie'             =>  $categorieName,
+                'title'             =>  $categorieName,
                 'slug'                  =>  str_slug($categorieName),
                 'is_confirm'            => rand(0,1),
                 'created_at'            =>  $faker->dateTime($max = 'now', $timezone = date_default_timezone_get()),

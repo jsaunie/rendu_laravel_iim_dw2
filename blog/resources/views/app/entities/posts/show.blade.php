@@ -26,7 +26,7 @@
                         <br>
                         by <a href="#">{{$post->getAuthor->name}}</a>
                         <br>
-                        Categories : {{ $post->getCategory->categorie }}
+                        Categories : {{ $post->getCategory->title }}
                     </div>
                 </div>
                 <div class="" id="newComm"></div>
@@ -41,7 +41,7 @@
                             <span class="pr-2">By : {{$post->getAuthor->name}}</span><a href="#" class="card-text"></a>
                         </div>
                         <div class="d-flex ">
-                            <span class="pr-2">Categories : {{ $post->getCategory->categorie }}</span> <a href="{" class="card-text"></a>
+                            <span class="pr-2">Categories : {{ $post->getCategory->title }}</span> <a href="{" class="card-text"></a>
                         </div>
                     </div>
                     <div class="card-footer text-muted">

@@ -15,7 +15,7 @@ class AddCategoriesTables extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('categorie');
+            $table->string('title');
             $table->string('slug');
             $table->integer('is_confirm');
             $table->timestamps();

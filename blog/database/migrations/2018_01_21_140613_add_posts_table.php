@@ -22,7 +22,7 @@ class AddPostsTable extends Migration
             $table->string('url_img');
             $table->integer('is_confirm');
             $table->integer('fk_user');
-            $table->integer('fk_categorie');
+            $table->integer('fk_category');
             $table->timestamps();
         });
     }

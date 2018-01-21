@@ -17,6 +17,6 @@ class Post extends Model
 
     public function getCategory()
     {
-        return $this->hasOne(Category::class, 'id', 'fk_categorie');
+        return $this->hasOne(Category::class, 'id', 'fk_category');
     }
 }

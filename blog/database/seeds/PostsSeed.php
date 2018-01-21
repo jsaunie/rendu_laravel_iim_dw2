@@ -25,7 +25,7 @@ class PostsSeed extends Seeder
                 'url_img'           =>  '750x300',
                 'is_confirm'        => rand(0,1),
                 'fk_user'           =>  rand(1, 30),
-                'fk_categorie'      =>  rand(1, 10),
+                'fk_category'      =>  rand(1, 10),
                 'created_at'        =>  $faker->dateTime($max = 'now', $timezone = date_default_timezone_get()),
             ];
         }
