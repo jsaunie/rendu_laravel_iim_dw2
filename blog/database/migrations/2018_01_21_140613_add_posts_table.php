@@ -20,6 +20,7 @@ class AddPostsTable extends Migration
             $table->longText('content');
             $table->integer('vote');
             $table->string('url_img');
+            $table->integer('is_confirm');
             $table->integer('fk_user');
             $table->integer('fk_categorie');
             $table->timestamps();
