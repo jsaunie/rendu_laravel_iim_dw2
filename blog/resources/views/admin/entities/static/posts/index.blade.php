@@ -29,7 +29,7 @@
                                 <h6>{{ Auth::user()->name }}, manager les posts de votre blog</h6>
                                 <p class="text-muted my-3">Vous pouvez ajouter, editer ou supprimer des posts à votre blog.</p>
                                 <p><span class="text-success">{{ $countPosts }}</span> posts au total !</p>
-                                <a href="#" class="btn btn-sm btn-rounded success theme">Add new post</a>
+                                <a href="{{ action('Admin\PostsController@add') }}" class="btn btn-sm btn-rounded success theme">Add new post</a>
                                 <a href="{{ action('Admin\StaticsController@dashboard') }}"class="btn btn-sm btn-rounded white">Go to Dashboard</a>
                             </div>
                         </div>
