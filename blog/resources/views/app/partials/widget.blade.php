@@ -33,7 +33,7 @@
             <div class="card-body">
                 <div class="row justify-content-around">
                     @if(Auth::user()->getRole->id < 2)
-                        <a href="" class="mb-3 btn btn-warning">
+                        <a href="{{ action('App\AuthController@confirm') }}" class="mb-3 btn btn-warning">
                             Confirmer votre compte !
                         </a>
                         <button disabled class="mb-3 btn btn-danger">

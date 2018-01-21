@@ -13,4 +13,12 @@ class AuthController extends Controller
         Auth::logout();
         return redirect()->back();
     }
+    
+    public function confirm()
+    {
+        Auth::user()->fk_role = 2;
+        Auth::user()->save();
+        
+        return redirect()->back();
+    }
 }

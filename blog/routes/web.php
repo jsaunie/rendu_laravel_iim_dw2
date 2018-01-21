@@ -32,6 +32,9 @@ Route::group(['prefix' => 'blog'], function() {
     });
 });
 
+Route::group(['prefix' => 'account'], function (){
+   Route::get('/confirm', ['uses' => 'App\AuthController@confirm']);
+});
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('/', ['uses' => 'Admin\StaticsController@dashboard']);
