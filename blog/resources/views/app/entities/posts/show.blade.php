@@ -40,7 +40,7 @@
                         @if(Auth::check())
                             @if(Auth::user()->id === $comment->fk_user_id)
                                 <div class="card-footer">
-                                    <a href="" class="btn btn-primary">Modifier mon commentaire !</a>
+                                    <a href="{{ action('App\CommentController@edit', $id = $comment->id) }}" class="btn btn-primary">Modifier mon commentaire !</a>
                                     <form action="{{ action('App\CommentController@delete') }}" method="POST" class="d-flex mt-1">
                                         {{ csrf_field() }}
                                         <input type="hidden" value="{{ $comment->id }}" name="commentId">

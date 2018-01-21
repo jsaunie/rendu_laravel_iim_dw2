@@ -26,6 +26,27 @@ class CommentController extends Controller
         dd($request);
     }
     
+    public function edit($id)
+    {
+        $comment = Comment::where('id', $id)->first();
+        
+        return view('app.entities.comments.edit')->with([
+            'comment' => $comment
+        ]);
+    }
+    
+    
+    public function postUpdateComment(Request $request, $id)
+    {
+        $comment = Comment::where('id', $id)->first();
+        
+        $comment->update([
+            'content' => $request->comment
+        ]);
+        
+        return redirect()->action('App\BlogController@show', $slug = $comment->getPost->slug);
+    }
+    
     public function delete(Request $request)
     {
         $comment = Comment::where('id', $request->commentId)->first();

@@ -12,10 +12,10 @@ class Comment extends Model
     
     public function getPost()
     {
-        return $this->belongsTo(Post::class, 'id','fk_post_id');
+        return $this->belongsTo(Post::class, 'fk_post_id','id');
     }
     public function getAuthor()
     {
-        return $this->belongsTo(User::class, 'id', 'fk_user_id');
+        return $this->belongsTo(User::class, 'fk_user_id', 'id');
     }
 }
