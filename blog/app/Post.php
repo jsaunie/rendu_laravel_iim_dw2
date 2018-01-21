@@ -10,7 +10,7 @@ class Post extends Model
 
     protected $guarded = [];
 
-    public function getUser()
+    public function getAuthor()
     {
         return $this->hasOne(User::class, 'id', 'fk_user');
     }
