@@ -28,7 +28,7 @@ class UsersController extends StaticsController
             //DATA
             $users = $this->getAllMember();
             $posts = $this->getALlPost();
-            $categories = $this->getAllCategorie();
+            $categories = $this->getAllCategory();
 
             return view(self::PATH_VIEW . 'index')->with([
                 'title' => 'Users',

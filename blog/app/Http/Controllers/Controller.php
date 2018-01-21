@@ -36,7 +36,7 @@ class Controller extends BaseController
     /**
      * @return mixed
      */
-    public function getAllCategorie()
+    public function getAllCategory()
     {
         $categories = Category::orderBy('id', 'desc')->paginate(6);
         return $categories;
@@ -45,7 +45,7 @@ class Controller extends BaseController
     /**
      * @return mixed
      */
-    public function getAllCategorieConfirm()
+    public function getAllCategoryConfirm()
     {
         $categories = Category::where('is_confirm', '>', '0')->orderBy('id', 'desc')->Paginate(6);
         return $categories;
@@ -53,10 +53,14 @@ class Controller extends BaseController
     
     public function getPostNotConfirm()
     {
-        $post = Post::where([
-            ['fk_user', Auth::user()->id],
-            ['is_confirm', '=', '0']
-        ])->get();
-        return $post;
+        if(Auth::user()){
+            $post = Post::where([
+                ['fk_user', Auth::user()->id],
+                ['is_confirm', '=', '0']
+            ])->get();
+        } else {
+            $post = null;
+        }
+            return $post;
     }
 }

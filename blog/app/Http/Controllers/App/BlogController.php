@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
-    
     const POST_VIEW = 'app.entities.posts.';
     const CATEGORIE_VIEW = 'app.entities.categories.';
     const PATH_CONTROLLER = 'App\BlogController@';
@@ -20,7 +19,7 @@ class BlogController extends Controller
     {
         $postOfUser = $this->getPostNotConfirm();
         $posts = $this->getAllPostConfirm();
-        $categories = $this->getAllCategorieConfirm();
+        $categories = $this->getAllCategoryConfirm();
         
         return view(self::POST_VIEW . 'index')->with([
             'title'      => 'Home',
