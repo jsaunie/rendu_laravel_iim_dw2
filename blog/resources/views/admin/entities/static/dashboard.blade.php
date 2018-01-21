@@ -146,7 +146,7 @@
                                             <span class="w-40 avatar circle brown">RO</span>
                                             <div class="list-body">
                                                 <a href="" class="item-title _500">{{ $post->title}}</a>
-                                                <div class="item-except text-sm text-muted h-1x">{{ $post->content }}</div>
+                                                <div class="item-except text-sm text-muted h-1x">{{ substr($post->content, 0, 140) }}</div>
                                                 <div class="item-except text-sm text-muted h-1x">{{ $post->getAuthor->name }}</div>
                                                 @if($post->is_confirm === 0)
                                                     <a href="{{ action('Admin\StaticsController@confirmPost', $slug = $post->slug ) }}"

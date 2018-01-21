@@ -8,6 +8,15 @@
                 @if($post->is_confirm === 0)
                     <span style="font-size: 16px" class="badge text-danger bg-light">En attente de confirmation</span>
                 @endif
+                @if(Auth::check())
+                    @if($post->getAuthor->id == Auth::user()->id )
+                        <form action="{{ action('App\BlogController@delete') }}" method="POST">
+                            {{csrf_field()}}
+                            <input type="hidden" value="{{ $post->id }}" name="postId">
+                            <button type="submit" class="btn btn-danger mt-1">Supprimer</button>
+                        </form>
+                    @endif
+                @endif
             </h1>
 
         </div>
@@ -17,7 +26,7 @@
             <div class="col-md-8" id="container">
                 <!-- Blog Post -->
                 <div class="card mb-4">
-                    <img class="card-img-top" src="{{ asset('storage/app/' . $post->url_img ) }}" alt="Card image cap">
+                    <img class="card-img-top" src="{{ asset('storage/' . $post->url_img ) }}" alt="Card image cap">
                     <div class="card-body">
                         <p class="card-text">{{ $post->content }}</p>
                     </div>
@@ -100,6 +109,11 @@
                 @if(Auth::check())
                     <div class="card mb-4">
                         <div class="card-body d-flex">
+                            @if(Auth::user()->id === $post->fk_user)
+                                <div class="    text-muted">
+                                    <span>Vous ne pouvez pas commentez votre propre article !</span>
+                                </div>
+                            @else
                             <form action="{{ action('App\CommentController@store') }}" method="POST">
                                 {{ csrf_field() }}
                                 <div class="flex flex-column">
@@ -113,6 +127,7 @@
                             </form>
                         </div>
                     </div>
+                    @endif
                 @else
                     <div class="card mb-4">
                         <div class="card-body d-flex text-muted">
