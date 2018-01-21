@@ -13,6 +13,50 @@
         </div>
     </div>
 
+@if(Auth::check())
+    <!-- Side Widget -->
+        @if(!Auth::user()->getPost == null)
+            <div class="card my-4">
+                <h5 class="card-header">Vos article <span class="rounded badge-danger px-2">{{ Auth::user()->getPost()->count() }}</span></h5>
+                <div class="card-body">
+                    <div class="row justify-content-around">
+                        @foreach(Auth::user()->getPost as $post)
+                            <a href="{{ action('App\StaticsController@showPost', $slug = $post->slug) }}" class="p-2 badge {{ $post->is_confirm === 0 ? 'badge-danger' : 'badge-success' }}">{{ $post->title }}</a>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        @endif
+        
+        <div class="card my-4">
+            <h5 class="card-header">Action</h5>
+            <div class="card-body">
+                <div class="row justify-content-around">
+                    @if(Auth::user()->getRole->id < 2)
+                        <a href="" class="mb-3 btn btn-warning">
+                            Confirmer votre compte !
+                        </a>
+                        <button disabled class="mb-3 btn btn-danger">
+                            Ajouter un posts
+                        </button>
+                        <button disabled class="mb-3 btn btn-danger">
+                            Ajouter une categories
+                        </button>
+                    @else
+                        <a href="" class="mb-3 btn btn-success">
+                            Ajouter un posts
+                        </a>
+                        <a href="#" class="mb-3 btn btn-success">
+                            Ajouter une categories
+                        </a>
+                    @endif
+                </div>
+            </div>
+        </div>
+
+@endif
+
+
 
 <!-- Categories Widget -->
     <div class="card my-4">
