@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Post;
 use App\User;
@@ -21,19 +22,25 @@ class StaticsController extends Controller
             $countUserConfirm = $this->countMemberConfirm();
             $countPosts = $this->countPost();
             $countPostsConfirm = $this->countPostConfirm();
+            $countCategories = $this->countCategories();
+            $countCategoriesConfirm = $this->countCategoriesConfirm();
 
             //DATA
             $users = $this->getAllMember();
             $posts = $this->getALlPost();
+            $categories = $this->getAllCategorie();
 
             return view(self::PATH_VIEW . 'dashboard')->with([
-                'title'                 => 'Dashboard',
-                'users'                 => $users,
-                'posts'                 => $posts,
-                'countUsers'            => $countUsers,
-                'countUsersConfirm'     => $countUserConfirm,
-                'countPosts'            => $countPosts,
-                'countPostsConfirm'     => $countPostsConfirm,
+                'title' => 'Dashboard',
+                'users' => $users,
+                'posts' => $posts,
+                'categories' => $categories,
+                'countUsers' => $countUsers,
+                'countUsersConfirm' => $countUserConfirm,
+                'countPosts' => $countPosts,
+                'countPostsConfirm' => $countPostsConfirm,
+                'countCategories' => $countCategories,
+                'countCategoriesConfirm' => $countCategoriesConfirm,
             ]);
         } else {
             return redirect()->back();
@@ -86,5 +93,18 @@ class StaticsController extends Controller
         $posts = Post::where('is_confirm', '>', '0')->get()->count();
         return $posts;
     }
+
+    public function countCategories()
+    {
+        $categories = Category::all()->count();
+        return $categories;
+    }
+
+    public function countCategoriesConfirm()
+    {
+        $categories = Category::where('is_confirm', '>', '0')->get()->count();
+        return $categories;
+    }
+
 }
 

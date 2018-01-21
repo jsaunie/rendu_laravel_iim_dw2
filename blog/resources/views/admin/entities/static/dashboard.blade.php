@@ -49,8 +49,8 @@
                             <div class="box list-item">
                                 <span class="avatar w-40 text-center rounded info theme"><span class="fa fa-female"></span></span>
                                 <div class="list-body">
-                                    <h4 class="m-0 text-md"><a href="#">0 <span class="text-sm">Categories</span></a></h4>
-                                    <small class="text-muted">0 Confirmée.</small>
+                                    <h4 class="m-0 text-md"><a href="#">{{ $countCategories}} <span class="text-sm">Categories</span></a></h4>
+                                    <small class="text-muted">{{ $countCategoriesConfirm }} Confirmée.</small>
                                 </div>
                             </div>
                         </div>
@@ -213,10 +213,11 @@
                                     <h3>Categories</h3>
                                 </div>
                                 <div class="list inset" style="max-height: 600px; overflow: scroll">
+                                    @foreach($categories as $category)
                                         <div class="list-item" data-id="item-6">
                                             <span class="w-40 avatar circle brown">RO</span>
                                             <div class="list-body">
-                                                <a href="" class="item-title _500">CATEGORY TITLE</a>
+                                                <a href="" class="item-title _500">{{ $category->title }}</a>
                                                 <div class="item-tag tag hide"></div>
                                             </div>
                                             {{--<div>
@@ -230,6 +231,7 @@
                                                 </div>
                                             </div>--}}
                                         </div>
+                                    @endforeach
                                     <div class="d-flex justify-content-center mt-3 mb-3">
                                         {{ $users->links() }}
                                     </div>
