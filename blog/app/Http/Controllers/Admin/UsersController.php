@@ -62,7 +62,7 @@ class UsersController extends StaticsController
         $users = $this->getAllMember();
         $posts = $this->getALlPost();
         $categories = $this->getAllCategory();
-        
+
         return view(self::PATH_VIEW . 'add')->with([
             'title' => 'Users',
             'users' => $users,
@@ -80,6 +80,31 @@ class UsersController extends StaticsController
 
     public function edit($id)
     {
+        $countUsers = $this->countMember();
+        $countUserConfirm = $this->countMemberConfirm();
+        $countPosts = $this->countPost();
+        $countPostsConfirm = $this->countPostConfirm();
+        $countCategories = $this->countCategories();
+        $countCategoriesConfirm = $this->countCategoriesConfirm();
+        $countTotal = $countPosts + $countUsers + $countCategories;
+
+        //DATA
+        $users = $this->getAllMember();
+        $posts = $this->getALlPost();
+        $categories = $this->getAllCategory();
+
+        return view(self::PATH_VIEW . 'add')->with([
+            'title' => 'Users',
+            'users' => $users,
+            'posts' => $posts,
+            'countUsers' => $countUsers,
+            'countUsersConfirm' => $countUserConfirm,
+            'countPosts' => $countPosts,
+            'countPostsConfirm' => $countPostsConfirm,
+            'countCategories' => $countCategories,
+            'countCategoriesConfirm' => $countCategoriesConfirm,
+            'countTotal' => $countTotal
+        ]);
 
     }
 
