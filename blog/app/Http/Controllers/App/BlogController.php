@@ -6,6 +6,7 @@ use App\Category;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
@@ -56,22 +57,22 @@ class BlogController extends Controller
     
     public function post(Request $request)
     {
+    
+        $categorie = $request->categorie[0];
+    
+        $request->validate([
+            'title' => 'required|string',
+            'categorie' => 'required',
+            'content' => 'required',
+        ]);
+    
+    
         if ($request->hasFile('file') === true) {
             if ($request->file('file')->isValid() === true) {
                 $filename = $request->file->getClientOriginalName();
                 $filesize = $request->file->getClientSize();
                 $request->file->storeAs('public/upload', $filename);
                 $path = $request->file->storeAs('public/upload', $filename);
-    
-                $categorie = $request->categorie[0];
-                
-                $request->validate([
-                    'title' => 'required|string',
-                    'categorie' => 'required',
-                    'content' => 'required',
-                ]);
-                
-                dd($path);
                 
                 Post::create([
                     'title' => $request->get('title'),
@@ -81,9 +82,10 @@ class BlogController extends Controller
                     'url_img' => $path,
                     'is_confirm' => 0,
                     'fk_user' => Auth::user()->id,
-                    'fk_categorie' => $categorie,
+                    'fk_category' => $categorie,
                 ]);
-                
+    
+                return redirect()->action(self::PATH_CONTROLLER . 'index');
             }
         }else{
             Post::create([
@@ -94,8 +96,10 @@ class BlogController extends Controller
                 'url_img' => '750x300',
                 'is_confirm' => 0,
                 'fk_user' => Auth::user()->id,
-                'fk_categorie' => $categorie,
+                'fk_category' => $categorie,
             ]);
+    
+            return redirect()->action(self::PATH_CONTROLLER . 'index');
         }
     }
 }
