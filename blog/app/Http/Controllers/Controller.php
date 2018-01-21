@@ -8,6 +8,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Auth;
 
 class Controller extends BaseController
 {
@@ -48,5 +49,14 @@ class Controller extends BaseController
     {
         $categories = Category::where('is_confirm', '>', '0')->orderBy('id', 'desc')->Paginate(6);
         return $categories;
+    }
+    
+    public function getPostNotConfirm()
+    {
+        $post = Post::where([
+            ['fk_user', Auth::user()->id],
+            ['is_confirm', '=', '0']
+        ])->get();
+        return $post;
     }
 }

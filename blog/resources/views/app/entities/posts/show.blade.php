@@ -17,7 +17,7 @@
             <div class="col-md-8" id="container">
                 <!-- Blog Post -->
                 <div class="card mb-4">
-                    <img class="card-img-top" src="http://placehold.it/{{ $post->url_img }}" alt="Card image cap">
+                    <img class="card-img-top" src="{{ asset($post->url_img ) }}" alt="Card image cap">
                     <div class="card-body">
                         <p class="card-text">{{ $post->content }}</p>
                     </div>

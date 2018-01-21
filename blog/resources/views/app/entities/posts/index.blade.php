@@ -13,6 +13,7 @@
 
             <div class="col-md-8">
                 <!-- Blog Post -->
+               
                 @foreach($posts as $post)
                     <div class="card mb-4">
                         <img class="card-img-top" src="http://placehold.it/{{ $post->url_img }}" alt="Card image cap">
