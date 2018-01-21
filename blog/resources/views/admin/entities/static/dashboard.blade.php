@@ -74,22 +74,6 @@
                                                 <div class="item-except text-sm h-1x {{ ($user->getRole->id === 2) || ($user->getRole->id === 3) ? 'text-muted' : 'text-danger' }} ">{{ $user->getRole->role }}</div>
                                                 <div class="item-tag tag hide"></div>
                                             </div>
-                                            <div>
-                                                <div class="item-action dropdown">
-                                                    <a href="#" data-toggle="dropdown" class="text-muted"><i
-                                                                class="fa fa-fw fa-ellipsis-v"></i></a>
-                                                    <div class="dropdown-menu dropdown-menu-right text-color"
-                                                         role="menu">
-                                                        <a class="dropdown-item"><i class="fa fa-tag"></i> Action </a><a
-                                                                class="dropdown-item"><i class="fa fa-pencil"></i>
-                                                            Another action </a><a class="dropdown-item"><i
-                                                                    class="fa fa-reply"></i> Something else here</a>
-                                                        <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item"><i class="fa fa-ellipsis-h"></i>
-                                                            Separated link</a>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                     @endforeach
                                     <div class="d-flex justify-content-center mt-3 mb-3">
@@ -110,22 +94,6 @@
                                             <div class="list-body">
                                                 <a href="" class="item-title _500">{{ $category->title }}</a>
                                                 <div class="item-tag tag hide"></div>
-                                            </div>
-                                            <div>
-                                                <div class="item-action dropdown">
-                                                    <a href="#" data-toggle="dropdown" class="text-muted"><i
-                                                                class="fa fa-fw fa-ellipsis-v"></i></a>
-                                                    <div class="dropdown-menu dropdown-menu-right text-color"
-                                                         role="menu">
-                                                        <a class="dropdown-item"><i class="fa fa-tag"></i> Action </a><a
-                                                                class="dropdown-item"><i class="fa fa-pencil"></i>
-                                                            Another action </a><a class="dropdown-item"><i
-                                                                    class="fa fa-reply"></i> Something else here</a>
-                                                        <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item"><i class="fa fa-ellipsis-h"></i>
-                                                            Separated link</a>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     @endforeach
@@ -153,22 +121,6 @@
                                                        class="btn btn-danger">Confirmé le post</a>
                                                 @endif
                                                 <div class="item-tag tag hide"></div>
-                                            </div>
-                                            <div>
-                                                <div class="item-action dropdown">
-                                                    <a href="#" data-toggle="dropdown" class="text-muted"><i
-                                                                class="fa fa-fw fa-ellipsis-v"></i></a>
-                                                    <div class="dropdown-menu dropdown-menu-right text-color"
-                                                         role="menu">
-                                                        <a class="dropdown-item"><i class="fa fa-tag"></i> Action </a><a
-                                                                class="dropdown-item"><i class="fa fa-pencil"></i>
-                                                            Another action </a><a class="dropdown-item"><i
-                                                                    class="fa fa-reply"></i> Something else here</a>
-                                                        <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item"><i class="fa fa-ellipsis-h"></i>
-                                                            Separated link</a>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     @endforeach

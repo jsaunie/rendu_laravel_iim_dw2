@@ -91,7 +91,6 @@ class CategoriesController extends StaticsController
         //DATA
         $users = $this->getAllMember();
         $posts = $this->getALlPost();
-        $categories = $this->getAllCategory();
 
         return view(self::PATH_VIEW . 'add')->with([
             'title' => 'Users',
