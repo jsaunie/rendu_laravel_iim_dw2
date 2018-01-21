@@ -72,8 +72,8 @@ class BlogController extends Controller
             if ($request->file('file')->isValid() === true) {
                 $filename = $request->file->getClientOriginalName();
                 $filesize = $request->file->getClientSize();
-                $request->file->storeAs('/upload', $filename);
-                $path = $request->file->storeAs('/upload', $filename);
+                $request->file->storeAs('', $filename);
+                $path = $request->file->storeAs('', $filename);
                 
                 Post::create([
                     'title' => $request->get('title'),
@@ -102,5 +102,14 @@ class BlogController extends Controller
     
             return redirect()->action(self::PATH_CONTROLLER . 'index');
         }
+    }
+    
+    public function delete(Request $request)
+    {
+        
+        $post = Post::where('id', $request->postId)->first();
+        
+        $post->delete();
+        return redirect()->action('App\BlogController@index');
     }
 }
