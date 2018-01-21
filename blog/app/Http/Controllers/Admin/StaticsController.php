@@ -24,11 +24,14 @@ class StaticsController extends Controller
             $countPostsConfirm = $this->countPostConfirm();
             $countCategories = $this->countCategories();
             $countCategoriesConfirm = $this->countCategoriesConfirm();
+            $countTotal = $countPosts + $countUsers+ $countCategories;
 
             //DATA
             $users = $this->getAllMember();
             $posts = $this->getALlPost();
             $categories = $this->getAllCategorie();
+
+
 
             return view(self::PATH_VIEW . 'dashboard')->with([
                 'title' => 'Dashboard',
@@ -41,6 +44,7 @@ class StaticsController extends Controller
                 'countPostsConfirm' => $countPostsConfirm,
                 'countCategories' => $countCategories,
                 'countCategoriesConfirm' => $countCategoriesConfirm,
+                'countTotal' => $countTotal
             ]);
         } else {
             return redirect()->back();
