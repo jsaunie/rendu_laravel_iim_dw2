@@ -26,6 +26,16 @@ class BlogController extends Controller
         ]);
     }
     
+    public function vote($slug)
+    {
+        $post = Post::where('slug', $slug)->first();
+    
+        $post->vote = $post->vote + 1;
+        $post->save();
+        
+        return redirect()->action('App\BlogController@show', $slug = $post->slug);
+    }
+    
     public function show($slug)
     {
         $post = Post::where('slug', $slug)->first();

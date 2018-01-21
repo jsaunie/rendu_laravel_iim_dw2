@@ -82,7 +82,7 @@
                             </div>
                         @else
                             <div class="card-footer text-muted">
-                                <a href="" class="btn btn-success">Votez !</a>
+                                <a href="{{ action('App\BlogController@vote', $slug = $post->slug) }}" class="btn btn-success">Votez !</a>
                             </div>
                         @endif
                     @else
