@@ -23,7 +23,7 @@ class StaticsController extends Controller
             $countPostsConfirm = $this->countPostConfirm();
             $countCategories = $this->countCategories();
             $countCategoriesConfirm = $this->countCategoriesConfirm();
-            $countTotal = $countPosts + $countUsers + $countCategories;
+            $countTotal = $countPostsConfirm + $countUserConfirm + $countCategoriesConfirm;
 
             //DATA
             $users = $this->getAllMember();

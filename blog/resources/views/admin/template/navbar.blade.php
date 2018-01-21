@@ -52,12 +52,14 @@
         <div class="no-shrink lt">
             <div class="nav-fold">
                 <div class="hidden-folded flex p-2-3 bg">
-                    <div class="d-flex p-1"><a href="app.inbox.html" class="flex text-nowrap"><i
-                                    class="fa fa-bell text-muted mr-1"></i> <span
-                                    class="badge badge-pill theme">{{ $countTotal }}</span> </a><a href="{{ action('App\AuthController@logout') }}" class="px-2"
-                                                                                    data-toggle="tooltip"
-                                                                                    title="Logout"><i
-                                    class="fa fa-power-off text-muted"></i></a></div>
+                    <div class="d-flex p-1">
+                        <a href="{{ action('Admin\StaticsController@dashboard') }}" class="flex text-nowrap">
+                            <i class="fa fa-bell text-muted mr-1"></i>
+                            <span class="badge badge-pill theme">{{ $countTotal }}</span>
+                        </a><a href="{{ action('App\AuthController@logout') }}" class="px-2" data-toggle="tooltip" title="Logout">
+                            <i class="fa fa-power-off text-muted"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
