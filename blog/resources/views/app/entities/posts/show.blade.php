@@ -40,12 +40,16 @@
                         @if(Auth::check())
                             @if(Auth::user()->id === $comment->fk_user_id)
                                 <div class="card-footer">
-                                    <a href="{{ action('App\CommentController@edit', $id = $comment->id) }}" class="btn btn-primary">Modifier mon commentaire !</a>
-                                    <form action="{{ action('App\CommentController@delete') }}" method="POST" class="d-flex mt-1">
+                                    <a href="{{ action('App\CommentController@edit', $id = $comment->id) }}"
+                                       class="btn btn-primary">Modifier mon commentaire !</a>
+                                    <form action="{{ action('App\CommentController@delete') }}" method="POST"
+                                          class="d-flex mt-1">
                                         {{ csrf_field() }}
                                         <input type="hidden" value="{{ $comment->id }}" name="commentId">
                                         <input type="hidden" value="{{ $post->id }}" name="postId">
-                                        <button type="submit" id="deleteCom{{$comment->id}}" data-id="{{ $comment->id }}" class="deleteCom btn btn-danger">delete</button>
+                                        <button type="submit" id="deleteCom{{$comment->id}}"
+                                                data-id="{{ $comment->id }}" class="deleteCom btn btn-danger">delete
+                                        </button>
                                     </form>
                                 </div>
                             @endif
@@ -63,7 +67,8 @@
                             <span class="pr-2">By : {{$post->getAuthor->name}}</span><a href="#" class="card-text"></a>
                         </div>
                         <div class="d-flex ">
-                            <span class="pr-2">Categories : {{ $post->getCategory->title }}</span> <a href="{" class="card-text"></a>
+                            <span class="pr-2">Categories : {{ $post->getCategory->title }}</span> <a href="{"
+                                                                                                      class="card-text"></a>
                         </div>
                     </div>
                     <div class="card-footer text-muted">
@@ -82,7 +87,8 @@
                             </div>
                         @else
                             <div class="card-footer text-muted">
-                                <a href="{{ action('App\BlogController@vote', $slug = $post->slug) }}" class="btn btn-success">Votez !</a>
+                                <a href="{{ action('App\BlogController@vote', $slug = $post->slug) }}"
+                                   class="btn btn-success">Votez !</a>
                             </div>
                         @endif
                     @else

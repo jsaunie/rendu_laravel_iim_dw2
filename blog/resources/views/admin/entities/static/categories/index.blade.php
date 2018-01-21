@@ -3,25 +3,7 @@
 @section('content')
 
     <div id="content" class="app-content box-shadow-1 box-radius-1" role="main">
-        <div class="content-header white box-shadow-1" id="content-header">
-            <div class="navbar navbar-expand-lg">
-                <a class="d-lg-none mx-2" data-toggle="modal" data-target="#aside">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
-                        <path d="M80 304h352v16H80zM80 248h352v16H80zM80 192h352v16H80z"/>
-                    </svg>
-                </a>
-                <div class="navbar-text nav-title flex" id="pageTitle">Dashboard</div>
-                <ul class="nav flex-row order-lg-2">
-                </ul>
-                <div class="collapse navbar-collapse no-grow order-lg-1" id="navbarToggler">
-                    <form class="input-group m-2 my-lg-0"><input type="text" class="form-control b-a no-bg no-shadow"
-                                                                 placeholder="Search projects..."> <span
-                                class="input-group-btn"><button type="button"
-                                                                class="btn white b-a no-bg no-shadow ml-3">Search</button></span>
-                    </form>
-                </div>
-            </div>
-        </div>
+        @include('admin.template.nav')
         <div class="content-main" id="content-main">
             <div>
                 <div class="p-3 light lt box-shadow-0 d-flex">
