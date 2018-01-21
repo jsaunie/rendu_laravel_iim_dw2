@@ -21,8 +21,10 @@ Auth::routes();
 
 Route::group(['prefix' => 'blog'], function () {
     Route::get('/', ['uses' => 'App\BlogController@index']);
-    Route::get('/{slug}', ['uses' => 'App\BlogController@show']);
+    Route::get('/show{slug}', ['uses' => 'App\BlogController@show']);
     Route::get('/{slug}/vote', ['uses' => 'App\BlogController@vote']);
+    Route::get('/create', ['uses' => 'App\BlogController@create']);
+    Route::post('/create', ['uses' => 'App\BlogController@post']);
     //comment
     Route::group(['prefix' => 'comment'], function () {
         Route::get('/{id}', ['uses' => 'App\CommentController@edit']);

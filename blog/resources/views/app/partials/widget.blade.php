@@ -43,7 +43,7 @@
                             Ajouter une categories
                         </button>
                     @else
-                        <a href="" class="mb-3 btn btn-success">
+                        <a href="{{ action('App\BlogController@create') }}" class="mb-3 btn btn-success">
                             Ajouter un posts
                         </a>
                         <a href="#" class="mb-3 btn btn-success">

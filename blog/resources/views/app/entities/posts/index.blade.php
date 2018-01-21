@@ -21,6 +21,11 @@
                             <p class="card-text">{{ $post->content }}</p>
                             <a href="{{ action('App\BlogController@show', [$post->slug]) }}" data-id="{{$post->id}}"
                                id="showPost" class="btn btn-primary">Read More &rarr;</a>
+                            @if(Auth::check())
+                                @if(Auth::user()->id === $post->getAuthor->id)
+                                    <button>Supprimer !</button>
+                                @endif
+                            @endif
                         </div>
                         <div class="card-footer text-muted">
                             Posted on ,
