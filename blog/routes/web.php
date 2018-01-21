@@ -11,8 +11,6 @@
 |
 */
 
-
-
 Route::get('/', function () {
     return redirect()->action('App\BlogController@index');
 });
@@ -32,3 +30,6 @@ Route::group(['prefix' => 'blog'], function() {
 });
 
 
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+    Route::get('/', ['uses' => 'Admin\StaticsController@dashboard']);
+});
