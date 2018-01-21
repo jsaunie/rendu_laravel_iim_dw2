@@ -9994,3 +9994,17 @@ a.text-dark:focus {
   }
 }
 
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body body {
+    padding-top: 56px;
+  }
+}
+
+ul {
+  margin: 0;
+}
+
