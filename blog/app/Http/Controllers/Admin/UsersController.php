@@ -1,19 +1,18 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Alpha
+ * Date: 21/01/2018
+ * Time: 19:49
+ */
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Post;
-use App\User;
-use Illuminate\Support\Facades\Auth;
 
-class StaticsController extends Controller
+class UsersController extends StaticsController
 {
-    const PATH_VIEW = 'admin.entities.static.';
 
-    use CountTrait;
-
-    public function dashboard()
+    public function index()
     {
         if ($this->isAdmin()) {
             //COUNT
@@ -31,7 +30,7 @@ class StaticsController extends Controller
             $categories = $this->getAllCategorie();
 
             return view(self::PATH_VIEW . 'dashboard')->with([
-                'title' => 'Dashboard',
+                'title' => 'Users',
                 'users' => $users,
                 'posts' => $posts,
                 'categories' => $categories,
@@ -48,28 +47,18 @@ class StaticsController extends Controller
         }
     }
 
-    public function isAdmin()
+    public function add()
     {
-        if (Auth::user()->getRole->role != 'Admin') {
-            return false;
-        } else {
-            return true;
-        }
+
     }
 
-    public function getAllMember()
+    public function edit()
     {
-        $users = User::orderBy('id', 'desc')->paginate(6);
-        return $users;
+
     }
 
-    public function confirmPost($slug)
+    public function delete()
     {
-        Post::where('slug', $slug)->update([
-            'is_confirm' => 1
-        ]);
-        return redirect()->back();
-    }
 
+    }
 }
-

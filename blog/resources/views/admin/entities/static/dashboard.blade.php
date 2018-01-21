@@ -42,16 +42,7 @@
                 </div>
                 <div class="padding">
                     <div class="row">
-                        <div class="col-sm-6 col-lg-3">
-                            <div class="box list-item">
-                                <span class="avatar w-40 text-center rounded primary"><span class="fa fa-dollar"></span></span>
-                                <div class="list-body">
-                                    <h4 class="m-0 text-md"><a href="#">75 <span class="text-sm">Sales</span></a></h4>
-                                    <small class="text-muted">6 waiting payment.</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-6 col-lg-4">
                             <div class="box list-item">
                                 <span class="avatar w-40 text-center rounded info theme"><span
                                             class="fa fa-female"></span></span>
@@ -62,7 +53,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-6 col-lg-4">
                             <div class="box list-item">
                                 <span class="avatar w-40 text-center rounded success"><span
                                             class="fa fa-bookmark"></span></span>
@@ -73,7 +64,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-lg-3">
+                        <div class="col-sm-6 col-lg-4">
                             <div class="box list-item">
                                 <span class="avatar w-40 text-center rounded warning"><span
                                             class="fa fa-comment"></span></span>
@@ -198,4 +189,19 @@
             </div>
         </div>
     </div>
+    <!--
+                    <div class="row no-gutters box">
+                        <div class="col-sm-8 offset-2">
+                            <div class="padding">
+                                <h6>Sales Statistical Overview</h6>
+                                <p class="text-muted my-3">Sale information on advertising, exhibitions, market
+                                    research, online media, customer desires, PR and much more</p>
+                                <p><i class="fa fa-arrow-circle-o-up text-success mr-1"></i><span class="text-success">15%</span>
+                                    more than last week</p>
+                                <a href="#" class="btn btn-sm btn-rounded success theme">Update</a> <a href="#"
+                                                                                                       class="btn btn-sm btn-rounded white">See
+                                    detail</a>
+                            </div>
+                        </div>
+                    </div>-->
 @stop

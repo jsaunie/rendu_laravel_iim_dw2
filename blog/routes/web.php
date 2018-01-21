@@ -19,12 +19,12 @@ Route::get('/logout', ['uses' => 'App\AuthController@logout']);
 
 Auth::routes();
 
-Route::group(['prefix' => 'blog'], function() {
+Route::group(['prefix' => 'blog'], function () {
     Route::get('/', ['uses' => 'App\BlogController@index']);
     Route::get('/{slug}', ['uses' => 'App\BlogController@show']);
     Route::get('/{slug}/vote', ['uses' => 'App\BlogController@vote']);
     //comment
-    Route::group(['prefix' => 'comment'], function (){
+    Route::group(['prefix' => 'comment'], function () {
         Route::get('/{id}', ['uses' => 'App\CommentController@edit']);
         Route::post('/update/{id}', ['uses' => 'App\CommentController@postUpdateComment']);
         Route::post('/create', ['uses' => 'App\CommentController@store']);
@@ -32,11 +32,17 @@ Route::group(['prefix' => 'blog'], function() {
     });
 });
 
-Route::group(['prefix' => 'account'], function (){
-   Route::get('/confirm', ['uses' => 'App\AuthController@confirm']);
+Route::group(['prefix' => 'account'], function () {
+    Route::get('/confirm', ['uses' => 'App\AuthController@confirm']);
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', ['uses' => 'Admin\StaticsController@dashboard']);
     Route::get('/post/confirm/{slug}', ['uses' => 'Admin\StaticsController@confirmPost']);
+    // Admin : Posts
+    Route::get('/posts', ['uses' => 'Admin\PostsController@index']);
+    // Admin : Users
+    Route::get('/users', ['uses' => 'Admin\UsersController@index']);
+    // Admin : Categories
+    Route::get('/categories', ['uses' => 'Admin\categoriesController@index']);
 });

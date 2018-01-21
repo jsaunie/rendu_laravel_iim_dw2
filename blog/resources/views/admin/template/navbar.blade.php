@@ -23,21 +23,21 @@
                         </li>
                         <li><a href="{{ action('Admin\StaticsController@dashboard') }}"><span
                                         class="nav-text">Dashboard</span></a></li>
-                        <li><a href="#">
+                        <li><a href="{{ action('Admin\CategoriesController@index') }}">
                                 <span class="nav-badge">
                                     <b class="badge badge-sm badge-pill success">{{ $countCategoriesConfirm }}</b> </span>
                                 <span class="nav-icon">
                                     <i class="fa fa-folder-open"></i>
                                 </span>
                                 <span class="nav-text">Categories</span></a></li>
-                        <li><a href="#">
+                        <li><a href="{{ action('Admin\PostsController@index') }}">
                                 <span class="nav-badge">
                                     <b class="badge badge-sm badge-pill success">{{ $countPostsConfirm }}</b> </span>
                                 <span class="nav-icon">
                                     <i class="fa fa-comment"></i>
                                 </span>
                                 <span class="nav-text">Posts</span></a></li>
-                        <li><a href="#">
+                        <li><a href="{{ action('Admin\UsersController@index') }}">
                                  <span class="nav-badge">
                                     <b class="badge badge-sm badge-pill success">{{ $countUsersConfirm }}</b> </span>
                                 <span class="nav-icon">
