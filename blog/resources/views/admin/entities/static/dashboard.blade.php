@@ -94,11 +94,17 @@
                                             </div>
                                             <div>
                                                 <div class="item-action dropdown">
-                                                    <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-fw fa-ellipsis-v"></i></a>
-                                                    <div class="dropdown-menu dropdown-menu-right text-color" role="menu">
-                                                        <a class="dropdown-item"><i class="fa fa-tag"></i> Action </a><a class="dropdown-item"><i class="fa fa-pencil"></i> Another action </a><a class="dropdown-item"><i class="fa fa-reply"></i> Something else here</a>
+                                                    <a href="#" data-toggle="dropdown" class="text-muted"><i
+                                                                class="fa fa-fw fa-ellipsis-v"></i></a>
+                                                    <div class="dropdown-menu dropdown-menu-right text-color"
+                                                         role="menu">
+                                                        <a class="dropdown-item"><i class="fa fa-tag"></i> Action </a><a
+                                                                class="dropdown-item"><i class="fa fa-pencil"></i>
+                                                            Another action </a><a class="dropdown-item"><i
+                                                                    class="fa fa-reply"></i> Something else here</a>
                                                         <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item"><i class="fa fa-ellipsis-h"></i> Separated link</a>
+                                                        <a class="dropdown-item"><i class="fa fa-ellipsis-h"></i>
+                                                            Separated link</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -125,11 +131,17 @@
                                             </div>
                                             <div>
                                                 <div class="item-action dropdown">
-                                                    <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-fw fa-ellipsis-v"></i></a>
-                                                    <div class="dropdown-menu dropdown-menu-right text-color" role="menu">
-                                                        <a class="dropdown-item"><i class="fa fa-tag"></i> Action </a><a class="dropdown-item"><i class="fa fa-pencil"></i> Another action </a><a class="dropdown-item"><i class="fa fa-reply"></i> Something else here</a>
+                                                    <a href="#" data-toggle="dropdown" class="text-muted"><i
+                                                                class="fa fa-fw fa-ellipsis-v"></i></a>
+                                                    <div class="dropdown-menu dropdown-menu-right text-color"
+                                                         role="menu">
+                                                        <a class="dropdown-item"><i class="fa fa-tag"></i> Action </a><a
+                                                                class="dropdown-item"><i class="fa fa-pencil"></i>
+                                                            Another action </a><a class="dropdown-item"><i
+                                                                    class="fa fa-reply"></i> Something else here</a>
                                                         <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item"><i class="fa fa-ellipsis-h"></i> Separated link</a>
+                                                        <a class="dropdown-item"><i class="fa fa-ellipsis-h"></i>
+                                                            Separated link</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -162,11 +174,17 @@
                                             </div>
                                             <div>
                                                 <div class="item-action dropdown">
-                                                    <a href="#" data-toggle="dropdown" class="text-muted"><i class="fa fa-fw fa-ellipsis-v"></i></a>
-                                                    <div class="dropdown-menu dropdown-menu-right text-color" role="menu">
-                                                        <a class="dropdown-item"><i class="fa fa-tag"></i> Action </a><a class="dropdown-item"><i class="fa fa-pencil"></i> Another action </a><a class="dropdown-item"><i class="fa fa-reply"></i> Something else here</a>
+                                                    <a href="#" data-toggle="dropdown" class="text-muted"><i
+                                                                class="fa fa-fw fa-ellipsis-v"></i></a>
+                                                    <div class="dropdown-menu dropdown-menu-right text-color"
+                                                         role="menu">
+                                                        <a class="dropdown-item"><i class="fa fa-tag"></i> Action </a><a
+                                                                class="dropdown-item"><i class="fa fa-pencil"></i>
+                                                            Another action </a><a class="dropdown-item"><i
+                                                                    class="fa fa-reply"></i> Something else here</a>
                                                         <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item"><i class="fa fa-ellipsis-h"></i> Separated link</a>
+                                                        <a class="dropdown-item"><i class="fa fa-ellipsis-h"></i>
+                                                            Separated link</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -189,19 +207,4 @@
             </div>
         </div>
     </div>
-    <!--
-                    <div class="row no-gutters box">
-                        <div class="col-sm-8 offset-2">
-                            <div class="padding">
-                                <h6>Sales Statistical Overview</h6>
-                                <p class="text-muted my-3">Sale information on advertising, exhibitions, market
-                                    research, online media, customer desires, PR and much more</p>
-                                <p><i class="fa fa-arrow-circle-o-up text-success mr-1"></i><span class="text-success">15%</span>
-                                    more than last week</p>
-                                <a href="#" class="btn btn-sm btn-rounded success theme">Update</a> <a href="#"
-                                                                                                       class="btn btn-sm btn-rounded white">See
-                                    detail</a>
-                            </div>
-                        </div>
-                    </div>-->
 @stop

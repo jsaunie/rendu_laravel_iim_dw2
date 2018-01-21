@@ -42,16 +42,13 @@
                 </div>
                 <div class="padding">
                     <div class="row no-gutters box">
-                        <div class="col-sm-8 offset-2">
+                        <div class="col-sm-8">
                             <div class="padding">
-                                <h6>Sales Statistical Overview</h6>
-                                <p class="text-muted my-3">Sale information on advertising, exhibitions, market
-                                    research, online media, customer desires, PR and much more</p>
-                                <p><i class="fa fa-arrow-circle-o-up text-success mr-1"></i><span class="text-success">15%</span>
-                                    more than last week</p>
-                                <a href="#" class="btn btn-sm btn-rounded success theme">Update</a> <a href="#"
-                                                                                                       class="btn btn-sm btn-rounded white">See
-                                    detail</a>
+                                <h6>{{ Auth::user()->name }}, manager les categories de votre blog</h6>
+                                <p class="text-muted my-3">Vous pouvez ajouter, editer ou supprimer les categories de votre blog.</p>
+                                <p><span class="text-success">{{ $countCategories }}</span> categories au total !</p>
+                                <a href="#" class="btn btn-sm btn-rounded success theme">Add new post</a>
+                                <a href="{{ action('Admin\StaticsController@dashboard') }}"class="btn btn-sm btn-rounded white">Go to Dashboard</a>
                             </div>
                         </div>
                     </div>
