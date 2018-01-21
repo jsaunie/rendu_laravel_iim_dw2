@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+//Route::get('/', function () {
+//    return redirect()->action('App\BlogController@index');
+//});
+Route::get('/logout', ['uses' => 'App\AuthController@logout']);
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', ['uses' => 'App\BlogController@index']);

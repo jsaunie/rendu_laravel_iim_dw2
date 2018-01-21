@@ -1,0 +1,54 @@
+@extends('app')
+
+@section('content')
+    
+    <!-- Page Content -->
+    <div class="container mt-5">
+        
+        <div class="row">
+            <h1 class="my-4 ml-3">Lasted Posts
+            </h1>
+        </div>
+        <div class="row">
+            <!-- Blog Entries Column -->
+            
+            <div class="col-md-8">
+                <!-- Blog Post -->
+                @foreach($posts as $post)
+                    <div class="card mb-4">
+                        <img class="card-img-top" src="http://placehold.it/{{ $post->url_img }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ $post->title }}</h2>
+                            <p class="card-text">{{ $post->content }}</p>
+                            <a href="" data-id="{{$post->id}}" id="showPost" class="btn btn-primary">Read More &rarr;</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Posted on ,
+                            <br>
+                            by <a href=""></a>
+                            <br>
+                            Categories : <a href=""></a>
+                            <br>
+                            Votes : <span class="rounded badge badge-success p-2">{{ $post->vote }}</span>
+                        </div>
+                    </div>
+            @endforeach
+            
+            
+            <!-- Pagination -->
+                <ul class="pagination justify-content-center mb-4">
+                    {{ $posts->links() }}
+                </ul>
+            
+            </div>
+            
+            <!-- Sidebar Widgets Column -->
+{{--            @include('app.partials.widget')--}}
+        
+        </div>
+        <!-- /.row -->
+    
+    </div>
+    <!-- /.container -->
+
+@endsection
