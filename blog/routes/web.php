@@ -13,11 +13,17 @@
 
 
 
-//Route::get('/', function () {
-//    return redirect()->action('App\BlogController@index');
-//});
+Route::get('/', function () {
+    return redirect()->action('App\BlogController@index');
+});
+
 Route::get('/logout', ['uses' => 'App\AuthController@logout']);
 
 Auth::routes();
 
-Route::get('/', ['uses' => 'App\BlogController@index']);
+Route::group(['prefix' => 'blog'], function() {
+    Route::get('/', ['uses' => 'App\BlogController@index']);
+    Route::get('/{slug}', ['uses' => 'App\BlogController@show']);
+});
+
+

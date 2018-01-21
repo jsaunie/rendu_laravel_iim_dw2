@@ -20,7 +20,7 @@
                         <div class="card-body">
                             <h2 class="card-title">{{ $post->title }}</h2>
                             <p class="card-text">{{ $post->content }}</p>
-                            <a href="" data-id="{{$post->id}}" id="showPost" class="btn btn-primary">Read More &rarr;</a>
+                            <a href="{{ action('App\BlogController@show', [$post->slug]) }}" data-id="{{$post->id}}" id="showPost" class="btn btn-primary">Read More &rarr;</a>
                         </div>
                         <div class="card-footer text-muted">
                             Posted on ,
