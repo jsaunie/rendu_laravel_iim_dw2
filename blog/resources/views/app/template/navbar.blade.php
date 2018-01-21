@@ -2,15 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
     <div class="container">
         <a class="navbar-brand" href="{{ action('App\BlogController@index') }}">Co-Blog</a>
-        @if(Auth::check())
-            @if(Auth::user()->getRole->id === 3)
-                <div class="nav-item">
-                    <a href="{{ action('Admin\StaticsController@dashboard') }}" class="btn btn-light">
-                        Admin
-                    </a>
-                </div>
-            @endif
-        @endif
+        
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

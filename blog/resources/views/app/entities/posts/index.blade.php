@@ -43,7 +43,7 @@
             </div>
             
             <!-- Sidebar Widgets Column -->
-{{--            @include('app.partials.widget')--}}
+            @include('app.partials.widget')
         
         </div>
         <!-- /.row -->
