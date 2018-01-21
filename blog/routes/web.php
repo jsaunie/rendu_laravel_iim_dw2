@@ -19,7 +19,7 @@ Route::get('/logout', ['uses' => 'App\AuthController@logout']);
 
 Auth::routes();
 
-Route::group(['prefix' => 'blog'], function () {
+Route::group(['prefix' => 'blog', 'middleware' => 'auth'], function () {
     Route::get('/', ['uses' => 'App\BlogController@index']);
     Route::get('/show/{slug}', ['uses' => 'App\BlogController@show']);
     Route::get('/{slug}/vote', ['uses' => 'App\BlogController@vote']);
@@ -34,12 +34,12 @@ Route::group(['prefix' => 'blog'], function () {
     });
 });
 
-Route::group(['prefix' => 'message'], function () {
+Route::group(['prefix' => 'message', 'middleware' => 'auth'], function () {
     Route::get('/', ['uses' => 'App\MessageController@create']);
 });
 
 
-Route::group(['prefix' => 'account'], function () {
+Route::group(['prefix' => 'account', 'middleware' => 'auth'], function () {
     Route::get('/confirm', ['uses' => 'App\AuthController@confirm']);
 });
 
