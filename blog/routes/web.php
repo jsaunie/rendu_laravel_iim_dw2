@@ -35,7 +35,9 @@ Route::group(['prefix' => 'blog', 'middleware' => 'auth'], function () {
 });
 
 Route::group(['prefix' => 'message', 'middleware' => 'auth'], function () {
-    Route::get('/', ['uses' => 'App\MessageController@create']);
+    Route::get('/create', ['uses' => 'App\MessageController@create']);
+    Route::get('/', ['uses' => 'App\MessageController@index']);
+    Route::post('/create', ['uses' => 'App\MessageController@send']);
 });
 
 

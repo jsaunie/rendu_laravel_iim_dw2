@@ -4,28 +4,24 @@
     <div class="container">
         
         <div class="row">
-            <h1 class="my-4 ml-3">Created Posts
+            <h1 class="my-4 ml-3">Envoyé un message a un membre !
             </h1>
         </div>
         <div class="row">
             <!-- Blog Entries Column -->
             <div class="col-md-8">
                 <!-- Blog Post -->
-                <form method="POST" action="{{ action('App\BlogController@post') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ action('App\MessageController@send') }}" enctype="multipart/form-data">
                     <div class="card mb-4">
                         <div class="card-body">
                             {{ csrf_field() }}
                             <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Titre</label>
-                                    <input type="text" name="title" class="form-control" id="inputEmail4" placeholder="titre">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputPassword4">Categories</label>
-                                    <select class="form-control js-example-basic-single" name="categorie[]">
-                                        {{--@foreach($categories as $category)--}}
-                                            {{--<option value="{{ $category->id }}">{{ $category->title }}</option>--}}
-                                        {{--@endforeach--}}
+                                <div class="form-group col-md-12">
+                                    <label for="inputPassword4">Membre</label>
+                                    <select class="form-control js-example-basic-single" name="user[]">
+                                        @foreach($users as $user)
+                                            <option value="{{ $user->id }}" {{ $user->id === Auth::user()->id ? 'disabled' : '' }}>{{ $user->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -33,19 +29,10 @@
                                 <label for="inputAddress">Contenue</label>
                                 <textarea class="form-control" name="content" rows="3"></textarea>
                             </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputCity">Image</label>
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="file" id="customFile">
-                                        <label class="custom-file-label" for="customFile">Choose file</label>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="card-footer text-muted">
                             <button class="btn btn-success">
-                                Ajouter le post
+                                Envoyé le message
                             </button>
                             
                         </div>

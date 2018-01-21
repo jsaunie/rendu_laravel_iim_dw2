@@ -22,9 +22,6 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ action('App\MessageController@create') }}">Envoyer un message</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
@@ -34,6 +31,12 @@
                     <a class="nav-link" href="#">Contact</a>
                 </li>
                 @if(Auth::check())
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ action('App\MessageController@create') }}">Envoyer un message</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ action('App\MessageController@index') }}">Vos message <span class="badge badge-primary">{{ Auth::user()->getMessage && Auth::user()->getMessage->count() > 0 ? Auth::user()->getMessage->count() : '0' }}</span></a>
+                    </li>
                     <div class="btn-group">
                         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Mon compte

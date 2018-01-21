@@ -72,8 +72,8 @@ class BlogController extends Controller
             if ($request->file('file')->isValid() === true) {
                 $filename = $request->file->getClientOriginalName();
                 $filesize = $request->file->getClientSize();
-                $request->file->storeAs('public/upload', $filename);
-                $path = $request->file->storeAs('public/upload', $filename);
+                $request->file->storeAs('/upload', $filename);
+                $path = $request->file->storeAs('/upload', $filename);
                 
                 Post::create([
                     'title' => $request->get('title'),
