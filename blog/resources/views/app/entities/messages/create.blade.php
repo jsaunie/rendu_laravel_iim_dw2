@@ -23,9 +23,9 @@
                                 <div class="form-group col-md-6">
                                     <label for="inputPassword4">Categories</label>
                                     <select class="form-control js-example-basic-single" name="categorie[]">
-                                        @foreach($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->title }}</option>
-                                        @endforeach
+                                        {{--@foreach($categories as $category)--}}
+                                            {{--<option value="{{ $category->id }}">{{ $category->title }}</option>--}}
+                                        {{--@endforeach--}}
                                     </select>
                                 </div>
                             </div>
@@ -47,6 +47,7 @@
                             <button class="btn btn-success">
                                 Ajouter le post
                             </button>
+                            
                         </div>
                     </div>
                 </form>

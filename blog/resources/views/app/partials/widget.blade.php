@@ -59,11 +59,15 @@
             <h5 class="card-header">Vos Post en attente de confirmation !</h5>
             <div class="card-body">
                 <div class="row justify-content-around">
-                    @foreach($postOfUser as $post)
-                        <a href="{{ action('App\BlogController@show', $slug = $post->slug) }}" class="mb-3 btn badge badge-danger">
-                            {{ substr($post->title, 0, 15) }}
-                        </a>
-                    @endforeach
+                   @if($postOfUser->isNotEmpty())
+                        @foreach($postOfUser as $post)
+                            <a href="{{ action('App\BlogController@show', $slug = $post->slug) }}" class="mb-3 btn badge badge-danger">
+                                {{ substr($post->title, 0, 15) }}
+                            </a>
+                        @endforeach
+                   @else
+                       Vous n'avez publier aucun post !
+                   @endif
                 </div>
             </div>
         </div>

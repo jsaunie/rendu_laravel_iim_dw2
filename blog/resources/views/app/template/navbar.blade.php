@@ -22,6 +22,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ action('App\MessageController@create') }}">Envoyer un message</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
