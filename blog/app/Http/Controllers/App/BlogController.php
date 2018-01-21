@@ -104,6 +104,33 @@ class BlogController extends Controller
         }
     }
     
+    public function showUpdateForm($slug)
+    {
+        $post = Post::where('slug', $slug)->first();
+        $categories = Category::all();
+        return view(self::POST_VIEW . 'update')->with([
+            'post' => $post,
+            'categories' => $categories
+        ]);
+    }
+    
+    public function postUpdate(Request $request, $slug)
+    {
+        
+        $categories = $request->categorie[0];
+    
+        $post = Post::where('slug', $slug)->first();
+    
+        $post->title = $request->title;
+        $post->slug = str_slug($request->title);
+        $post->content = $request->get('content');
+        $post->fk_category = $categories;
+        
+        $post->save();
+        
+        return redirect()->action('App\BlogController@show', $slug = $post->slug);
+    }
+    
     public function delete(Request $request)
     {
         
