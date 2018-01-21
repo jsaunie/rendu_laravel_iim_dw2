@@ -28,7 +28,7 @@ class StaticsController extends Controller
             //DATA
             $users = $this->getAllMember();
             $posts = $this->getALlPost();
-            $categories = $this->getAllCategorie();
+            $categories = $this->getAllCategory();
 
             return view(self::PATH_VIEW . 'dashboard')->with([
                 'title' => 'Dashboard',

@@ -100,7 +100,7 @@ class BlogController extends Controller
                 'fk_category' => $categorie,
             ]);
     
-            return redirect()->action(self::PATH_CONTROLLER . 'index');
+            return redirect()-> action(self::PATH_CONTROLLER . 'index');
         }
     }
     
