@@ -30,6 +30,23 @@
                     </div>
                 </div>
                 <div class="" id="newComm"></div>
+                @foreach($post->getComment->sortByDesc('id') as $comment)
+                    <div class="card my-2" id="commentIn{{$comment->id}}" data-id-comment="{{$comment->id}}">
+                        <div class="card-body">
+                            <div class="card-text">
+                                {{$comment->content }}
+                            </div>
+                        </div>
+                        @if(Auth::check())
+                            @if(Auth::user()->id === $comment->fk_user_id)
+                                <div class="card-footer">
+                                    <a href="" class="btn btn-primary">Modifier mon commentaire !</a>
+                                    <span id="deleteCom{{$comment->id}}" data-id="{{ $comment->id }}" class="deleteCom btn btn-danger">delete</span>
+                                </div>
+                            @endif
+                        @endif
+                    </div>
+                @endforeach
 
             </div>
 
@@ -72,13 +89,17 @@
                 @if(Auth::check())
                     <div class="card mb-4">
                         <div class="card-body d-flex">
-                            <div class="flex flex-column">
-                                <textarea name="comment" id="commentContain" class="form-control w-100"
-                                          placeholder="Votre Commentaire"></textarea>
-                                <button type="submit" id="addComment" data-post="{{ $post->id }}"
-                                        class="btn btn-light mt-5">Mettre votre commentaire
-                                </button>
-                            </div>
+                            <form action="{{ action('App\CommentController@store') }}" method="POST">
+                                {{ csrf_field() }}
+                                <div class="flex flex-column">
+                                    <textarea name="comment" id="commentContain" class="form-control w-100"
+                                              placeholder="Votre Commentaire"></textarea>
+                                    <input type="hidden" value="{{ $post->id }}" name="postId">
+                                    <button type="submit" id="addComment" data-post="{{ $post->id }}"
+                                            class="btn btn-light mt-5">Mettre votre commentaire
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 @else

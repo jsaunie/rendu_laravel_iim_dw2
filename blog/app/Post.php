@@ -19,4 +19,8 @@ class Post extends Model
     {
         return $this->hasOne(Category::class, 'id', 'fk_category');
     }
+    
+    public function getComment(){
+        return $this->hasMany(Comment::class,'fk_post_id', 'id');
+    }
 }
