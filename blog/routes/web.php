@@ -56,6 +56,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::group(['prefix' => 'posts'], function () {
         Route::get('/', ['uses' => 'Admin\PostsController@index']);
         Route::get('/add', ['uses' => 'Admin\PostsController@add']);
+        Route::post('/add', ['uses' => 'Admin\PostsController@store']);
         Route::get('/edit/{id}', ['uses' => 'Admin\PostsController@edit']);
         Route::get('/delete/{id}', ['uses' => 'Admin\PostsController@delete']);
     });

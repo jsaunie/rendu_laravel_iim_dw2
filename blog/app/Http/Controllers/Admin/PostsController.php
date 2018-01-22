@@ -9,6 +9,8 @@
 namespace App\Http\Controllers\Admin;
 
 
+use Illuminate\Http\Request;
+
 class PostsController extends StaticsController
 {
     const PATH_VIEW = 'admin.entities.static.posts.';
@@ -76,6 +78,12 @@ class PostsController extends StaticsController
             'countTotal' => $countTotal
         ]);
 
+    }
+    
+    
+    public function store(Request $request)
+    {
+        dd($request);
     }
 
     public function edit($id)
